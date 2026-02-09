@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects | MAREESWARAN</title>
 
+<!-- FontAwesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ===== RESET ===== */
@@ -66,12 +69,18 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ===== LOGO SIZE FIX (ONLY CHANGE) ===== */
+/* ===== LOGO & NAV LINKS ===== */
 .logo img{
   width:45px;
   height:auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.logo img:hover{
+  transform: scale(1.1);
 }
 
 nav ul{
@@ -83,7 +92,25 @@ nav ul{
 nav a{
   color:#f5f5f5;
   text-decoration:none;
+  font-weight: 500;
   transition:.3s;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg,#ff416c,#ffcc70);
+  transition: width 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
 }
 
 nav a:hover,
@@ -96,28 +123,41 @@ nav a.active{
 
 .menu-icon{
   display:none;
-  font-size:2rem;
+  font-size:1.8rem;
   cursor:pointer;
+  color: #fff;
 }
 
+/* ===== MOBILE MENU MEDIA QUERY ===== */
 @media(max-width:768px){
   nav ul{
-    display:none;
+    display:none; /* Hidden by default on mobile */
     position:absolute;
-    top:65px;
+    top:70px;
     right:20px;
-    background:rgba(0,0,0,.9);
+    background:rgba(15, 32, 39, 0.95);
+    backdrop-filter: blur(10px);
     flex-direction:column;
     width:220px;
-    padding:15px;
+    padding:20px;
     border-radius:12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    gap: 15px;
   }
-  nav ul.active{display:flex;}
+  
+  nav ul.active{display:flex; animation: slideDown 0.3s ease forwards;}
+  
   .menu-icon{display:block;}
 
   .logo img{
     width:38px;
   }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== PROJECTS SECTION ===== */
@@ -129,15 +169,21 @@ nav a.active{
 
 .projects h1{
   font-size:2.8rem;
-  margin-bottom:50px;
+  margin-bottom:10px;
   background:linear-gradient(90deg,#ff416c,#ffcc70);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
+.section-subtitle {
+  margin-bottom: 50px;
+  color: #aaa;
+  font-size: 1rem;
+}
+
 /* ===== PROJECT GRID ===== */
 .project-grid{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -146,14 +192,26 @@ nav a.active{
 
 /* ===== PROJECT CARD ===== */
 .project-card{
-  background:rgba(255,255,255,0.07);
+  background:rgba(255,255,255,0.05);
   backdrop-filter:blur(15px);
+  border: 1px solid rgba(255,255,255,0.05);
   border-radius:20px;
   padding:22px;
-  box-shadow:0 12px 40px rgba(0,0,0,.6);
+  box-shadow:0 12px 40px rgba(0,0,0,.3);
   transition:.4s;
-  animation:fadeIn 1.4s ease;
+  animation:fadeIn 0.8s ease forwards;
+  opacity: 0; /* Initial state for animation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
+
+/* Staggered animation delays */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
 
 @keyframes fadeIn{
   from{opacity:0;transform:translateY(40px);}
@@ -161,46 +219,59 @@ nav a.active{
 }
 
 .project-card:hover{
-  transform:translateY(-12px) scale(1.03);
-  box-shadow:0 0 25px rgba(255,204,112,.6);
+  transform:translateY(-10px) scale(1.02);
+  background:rgba(255,255,255,0.1);
+  border-color: rgba(255, 65, 108, 0.3);
+  box-shadow:0 0 30px rgba(255,65,108,0.2);
 }
 
 .project-card img{
   width:100%;
-  border-radius:14px;
+  height: 160px;
+  object-fit: cover;
+  border-radius:12px;
   margin-bottom:15px;
+  border: 2px solid rgba(255,255,255,0.1);
 }
 
 .project-card h3{
-  background:linear-gradient(90deg,#ff416c,#ffcc70);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  color: #fff;
   margin-bottom:8px;
+  font-size: 1.2rem;
 }
 
 .project-card p{
-  color:#ddd;
-  font-size:.95rem;
-  margin-bottom:15px;
+  color:#ccc;
+  font-size:.9rem;
+  margin-bottom:20px;
+  flex-grow: 1; /* Pushes buttons to bottom */
 }
 
 /* ===== BUTTONS ===== */
+.project-links{
+  margin-top: auto;
+}
+
 .project-links a{
   display:inline-block;
-  margin:6px;
-  padding:10px 22px;
+  margin:5px;
+  padding:8px 20px;
   border-radius:30px;
-  background:linear-gradient(45deg,#ff416c,#ff4b2b);
+  background:transparent;
+  border: 1px solid rgba(255,255,255,0.2);
   color:white;
   text-decoration:none;
-  font-size:.9rem;
+  font-size:.85rem;
   transition:.3s;
 }
 
 .project-links a:hover{
-  background:linear-gradient(45deg,#ffcc70,#ff416c);
-  box-shadow:0 0 15px rgba(255,204,112,.6);
+  background:linear-gradient(45deg,#ff416c,#ff4b2b);
+  border-color: transparent;
+  box-shadow:0 0 15px rgba(255,65,108,0.6);
+  transform: scale(1.05);
 }
+
 </style>
 </head>
 
@@ -209,7 +280,8 @@ nav a.active{
 <!-- ===== NAVBAR ===== -->
 <header>
   <a href="index.html" class="logo">
-    <img src="m-logo-letter-icon-monogram-m-letter-design-with-white-line-monogram-and-minimalist-modern-creative-look-vector-removebg-preview.png" alt="Logo">
+    <!-- Note: Ensure this image path is correct. Using a placeholder if file is missing. -->
+    <img src="https://cdn-icons-png.flaticon.com/512/1063/1063376.png" alt="M Logo" onerror="this.src='https://via.placeholder.com/45?text=M'">
   </a>
 
   <nav>
@@ -224,62 +296,95 @@ nav a.active{
     </ul>
   </nav>
 
-  <div class="menu-icon" id="menu-icon">&#9776;</div>
+  <div class="menu-icon" id="menu-icon">
+    <i class="fas fa-bars"></i>
+  </div>
 </header>
 
 <!-- ===== PROJECTS ===== -->
 <section class="projects">
   <h1>My Projects</h1>
+  <p class="section-subtitle">A selection of my recent work and development experiments</p>
 
   <div class="project-grid">
 
+    <!-- Project 1 -->
     <div class="project-card">
-      <img src="images/project1.png">
-      <h3>Personal Portfolio Website</h3>
-      <p>Modern responsive portfolio using HTML, CSS & JavaScript.</p>
+      <!-- Used Placeholder Image -->
+      <img src="https://picsum.photos/seed/portfolio/400/300" alt="Portfolio Project">
+      <h3>Personal Portfolio</h3>
+      <p>Modern responsive portfolio using HTML, CSS & JavaScript with glassmorphism design.</p>
       <div class="project-links">
         <a href="https://github.com/MAREESHAN-1708" target="_blank">
           <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="#"><i class="fa-solid fa-globe"></i> Live</a>
+        <a href="#" target="_blank"><i class="fa-solid fa-globe"></i> Live Demo</a>
       </div>
     </div>
 
+    <!-- Project 2 -->
     <div class="project-card">
-      <img src="images/project2.png">
-      <h3>Student Management System</h3>
-      <p>CRUD desktop application built using C# and SQL Server.</p>
+      <img src="https://picsum.photos/seed/student/400/300" alt="Student Project">
+      <h3>Student Management</h3>
+      <p>CRUD desktop application built using C# and SQL Server for efficient data handling.</p>
       <div class="project-links">
-        <a href="https://mx-shan08.github.io/Student-management-system/"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://mx-shan08.github.io/Student-management-system/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </div>
 
+    <!-- Project 3 -->
     <div class="project-card">
-      <img src="images/project3.png">
-      <h3>Event planner webpage</h3>
-      <p>Small JavaScript projects focusing on logic and UI.</p>
+      <img src="https://picsum.photos/seed/event/400/300" alt="Event Planner">
+      <h3>Event Planner</h3>
+      <p>Interactive webpage focusing on event scheduling logic and modern UI principles.</p>
       <div class="project-links">
-        <a href="https://mx-shan08.github.io/EVENT-PLANNER-/"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://mx-shan08.github.io/EVENT-PLANNER-/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </div>
 
+     <!-- Project 4 -->
      <div class="project-card">
-      <img src="images/project3.png">
-      <h3>Photography webpage</h3>
-      <p>js,css,projects focusing on logic and UI.</p>
+      <img src="https://picsum.photos/seed/photo/400/300" alt="Photography">
+      <h3>Photography Showcase</h3>
+      <p>A visually appealing gallery webpage built with JS and CSS focusing on layout.</p>
       <div class="project-links">
-        <a href="https://mx-shan08.github.io/Photography/"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://mx-shan08.github.io/Photography/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </div>
   </div>
 </section>
 
 <script>
+// Mobile Menu Toggle Logic
 const menuIcon = document.getElementById("menu-icon");
 const menu = document.getElementById("menu");
-menuIcon.onclick = () => menu.classList.toggle("active");
+
+if(menuIcon && menu){
+  menuIcon.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    
+    // Toggle icon between bars and times (X)
+    const icon = menuIcon.querySelector('i');
+    if(menu.classList.contains('active')){
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+
+  // Close menu when a link is clicked
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('active');
+      const icon = menuIcon.querySelector('i');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    });
+  });
+}
 </script>
 
 </body>
 </html>
-
