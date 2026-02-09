@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | MAREESWARAN</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(-45deg, #141e30, #243b55, #0f2027, #203a43);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Gradient text utility */
+    .gradient-text {
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      font-weight: bold;
+    }
+
+    header {
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+    }
+
+    header a.logo {
+      font-size: 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header a.logo img {
+      height: 35px;   /* small logo size */
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Menu Icon */
+    .menu-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      display: none;
+      color: #ffcc70;
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background: rgba(0,0,0,0.8);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        animation: slideIn 0.4s ease;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Contact Section */
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 3rem;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 1rem;
+      padding: 3rem;
+      max-width: 600px;
+      text-align: center;
+      border: 2px solid rgba(255,255,255,0.2);
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .contact-card h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      margin: 2rem 0;
+    }
+
+    .contact-info p {
+      margin: 0.8rem 0;
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    .contact-info i {
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      margin-right: 10px;
+    }
+
+    /* Social Links */
+    .social-links {
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+
+    /* Back Button */
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      color: #000;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="contact.html" class="logo">
+      <img src="m-logo-letter-icon-monogram-m-letter-design-with-white-line-monogram-and-minimalist-modern-creative-look-vector-removebg-preview.png" alt="Logo">
+      <span class="gradient-text"></span>
+    </a>
+    <nav id="menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="education.html">Education</a>
+  <a href="experience.html">Experience</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html" class="active">Contact</a>
+</nav>
+
+    
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-card">
+      <h1 class="gradient-text">Get in Touch</h1>
+      <div class="contact-info">
+        <p><i class="fa-solid fa-envelope"></i> n.mareeswaranmareeshan@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> +94 715 208 168</p>
+        <p><i class="fa-solid fa-location-dot"></i> Colombo, Sri Lanka</p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/n-mareeswaran-64b918373/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/__._ehxn_.__?igsh=MTBoN240ZXNpOGJtOA==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/94715208168" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/MAREESHAN-1708
+" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+
+      <a href="index.html" class="btn">⬅ Back to Home</a>
+    </div>
+  </section>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuIcon = document.getElementById("menu-icon");
+      const menu = document.getElementById("menu");
+
+      if (menuIcon && menu) {
+        menuIcon.addEventListener("click", () => {
+          menu.classList.toggle("active");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

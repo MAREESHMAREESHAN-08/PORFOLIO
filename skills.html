@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | MAREESWARAN</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55, #0f2027, #203a43);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Gradient logo text (if text instead of image) */
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        border-radius: 12px;
+      }
+      nav ul.active { display: flex; }
+      .menu-icon { display: block; }
+    }
+
+    /* ==== Skills Section ==== */
+    .skills {
+      padding: 60px 20px;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .skills h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .skills-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .skill-card.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+
+    .skill-card i {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .skill-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .skill-card p {
+      font-size: 1rem;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    header a.logo img {
+      height: 30px;   /* small size */
+      width: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- ==== NAVBAR ==== -->
+  <header>
+    <!-- If you want image logo -->
+    <a href="skills.html" class="logo">
+      <img src="m-logo-letter-icon-monogram-m-letter-design-with-white-line-monogram-and-minimalist-modern-creative-look-vector-removebg-preview.png" alt="Logo">
+    </a>
+    <!-- If you want text logo with gradient -->
+    <!-- <div class="logo-text">MAREESWARAN</div> -->
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+  </header>
+
+  <!-- ==== SKILLS SECTION ==== -->
+  <section class="skills">
+    <h1>My Skills</h1>
+    <div class="skills-section">
+      <div class="skill-card"><i class="fa-solid fa-lightbulb"></i><h3>Learning & Adaptability</h3><p>Quick to grasp new concepts and adjust to different environments.</p></div>
+      <div class="skill-card"><i class="fa-solid fa-briefcase"></i><h3>Strong Work Ethics</h3><p>Committed to responsibility, discipline, and excellence in tasks.</p></div>
+      <div class="skill-card"><i class="fa-solid fa-comments"></i><h3>Communication Skills</h3><p>Effective in conveying ideas clearly and collaborating with teams.</p></div>
+      <div class="skill-card"><i class="fa-solid fa-people-group"></i><h3>Teamwork</h3><p>Ability to work well with others and achieve common goals.</p></div>
+      <div class="skill-card"><i class="fa-solid fa-brain"></i><h3>Problem Solving</h3><p>Analytical thinker skilled at finding innovative solutions.</p></div>
+      <div class="skill-card"><i class="fa-solid fa-clock"></i><h3>Time Management</h3><p>Efficiently prioritizing and managing tasks to meet deadlines.</p></div>
+    </div>
+  </section>
+
+  <!-- ==== JS for Menu + Scroll Animation ==== -->
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const menu = document.getElementById("menu");
+    menuIcon.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // Reveal skill cards on scroll
+    const cards = document.querySelectorAll(".skill-card");
+    const revealCards = () => {
+      const trigger = window.innerHeight * 0.85;
+      cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top < trigger) card.classList.add("show");
+      });
+    };
+    window.addEventListener("scroll", revealCards);
+    window.addEventListener("load", revealCards);
+  </script>
+</body>
+</html>

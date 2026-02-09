@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience | MAREESWARAN</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55, #0f2027, #203a43);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+    }
+
+    /* Gradient text utility */
+    .gradient-text {
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      font-weight: bold;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    header a.logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    header a.logo img {
+      height: 30px; /* small size */
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ffcc70;
+    }
+
+    /* Mobile Menu */
+    .menu-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      display: none;
+      color: #ffcc70;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background: rgba(0,0,0,0.9);
+        padding: 1.2rem;
+        border-radius: 0.5rem;
+        animation: slideIn 0.3s ease;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-15px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Experience Section */
+    .experience-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .experience-section h1 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+    }
+
+    .experience-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .experience-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease both;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(255, 180, 0, 0.3);
+    }
+
+    .experience-card i {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .experience-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Back Button */
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 25px;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+  <a href="experience.html" class="logo">
+    <img src="m-logo-letter-icon-monogram-m-letter-design-with-white-line-monogram-and-minimalist-modern-creative-look-vector-removebg-preview.png" alt="Logo">
+    <span class="gradient-text"></span>
+  </a>
+    <nav id="menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="education.html">Education</a>
+  <a href="experience.html" class="active">Experience</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+  </header>
+
+  <!-- Experience Section -->
+  <section class="experience-section">
+    <h1 class="gradient-text">My Experience</h1>
+    <div class="experience-boxes">
+      <div class="experience-card">
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3 class="gradient-text">Fresher</h3>
+        <p>I am a motivated fresher seeking my first opportunity in the IT industry. Ready to learn, grow, and contribute to real-world projects with passion and dedication.</p>
+      </div>
+      <div class="experience-card">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3 class="gradient-text">Academic Projects</h3>
+        <p>Developed academic projects in Web Development and IT fundamentals during my Diploma and HND courses, showcasing problem-solving and coding skills.</p>
+      </div>
+      <div class="experience-card">
+        <i class="fa-solid fa-briefcase"></i>
+        <h3 class="gradient-text">Future Internships</h3>
+        <p>Looking forward to gaining hands-on experience through internships and industrial training in software engineering and web development.</p>
+      </div>
+    </div>
+    <a href="index.html" class="btn">⬅ Back to Home</a>
+  </section>
+
+  <!-- Script for Menu Toggle -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuIcon = document.getElementById("menu-icon");
+      const menu = document.getElementById("menu");
+
+      if (menuIcon && menu) {
+        menuIcon.addEventListener("click", () => {
+          menu.classList.toggle("active");
+        });
+      }
+    });
+  </script>
+</body>
+</html>

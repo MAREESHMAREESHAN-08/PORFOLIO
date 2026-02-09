@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education | MAREESWARAN</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55, #0f2027, #203a43);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        border-radius: 12px;
+      }
+      nav ul.active { display: flex; }
+      .menu-icon { display: block; color: #fff; }
+    }
+
+    /* ==== Education Section ==== */
+    .education {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .edu-box {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 15px;
+      padding: 30px;
+      width: 100%;
+      max-width: 700px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .edu-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+    }
+
+    .edu-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .edu-header img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .edu-header h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .edu-box p {
+      margin: 5px 0;
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    .edu-box b {
+      background: linear-gradient(90deg, #ff416c, #ffcc70);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header a.logo img {
+      height: 30px;   /* small size */
+      width: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==== NAVBAR ==== -->
+  <header>
+    <a href="education.html" class="logo">
+      <img src="m-logo-letter-icon-monogram-m-letter-design-with-white-line-monogram-and-minimalist-modern-creative-look-vector-removebg-preview.png" alt="Logo">
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="education.html" class="active">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+  </header>
+
+  <!-- ==== EDUCATION SECTION ==== -->
+  <section class="education">
+
+    <!-- O/L -->
+    <div class="edu-box">
+      <div class="edu-header">
+        <img src="Screenshot 2025-09-13 182741.png" alt="SLC Logo">
+        <h2>St. Lucia’s College, Kotahena, Col-13</h2>
+      </div>
+      <p><b>G.C.E Ordinary Level Examination - 2020</b></p>
+      <p>• Hinduism – C<br>• Tamil Language – C<br>• Mathematics – C<br>• Health Science – C<br>• History – S<br>• English – S<br>• Science – S<br>• Music – S</p>
+    </div>
+
+    <!-- Diploma -->
+    <div class="edu-box">
+      <div class="edu-header">
+        <img src="images.png" alt="ESU Logo">
+        <h2>Esoft Metro Campus (ESU)</h2>
+      </div>
+      <p><b>Diploma in Information Technology</b></p>
+      <p>JAN 2022 – FEB 2023<br>Grade: Pass</p>
+    </div>
+
+<!-- Diploma -->
+    <div class="edu-box">
+      <div class="edu-header">
+        <img src="images.png" alt="ESU Logo">
+        <h2>Esoft Metro Campus (ESU)</h2>
+      </div>
+      <p><b>Diploma in English</b></p>
+      <p>FEB 2026 – DEC 2026<br>Grade: Pending</p>
+    </div>
+
+    <!-- HND -->
+    <div class="edu-box">
+      <div class="edu-header">
+        <img src="images.png" alt="ESU Logo">
+        <h2>Esoft Metro Campus (ESU)</h2>
+      </div>
+      <p><b>BITEC Higher National Diploma in Computing (HND)</b></p>
+      <p>JUN 2023 – JUL 2025<br>Grade: Merit</p>
+    </div>
+
+    <!-- Bachelor's -->
+    <div class="edu-box">
+      <div class="edu-header">
+        <img src="images.png" alt="ESU Logo">
+        <h2>Esoft Metro Campus (ESU)</h2>
+      </div>
+      <p><b>Bachelor’s Degree in Data Science</b></p>
+      <p>FEB 2026 – FEB 2027<br>Grade: Pending</p>
+    </div>
+
+  </section>
+
+  <!-- ==== JS for Menu ==== -->
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const menu = document.getElementById("menu");
+    menuIcon.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
